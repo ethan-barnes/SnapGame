@@ -21,6 +21,11 @@ namespace SnapGame
             return Cards;
         }
 
+        public int GetSize()
+        {
+            return Cards.Count;
+        }
+
         public Card GetCardAtPosition(int pos)
         {
             if (Cards != null)
@@ -33,6 +38,16 @@ namespace SnapGame
             }
         }
 
+        public bool CheckSnap()
+        {
+            List<Card> last2 = Cards.TakeLast(2).ToList();
+            if (last2[0].GetSuit() == last2[1].GetSuit() || last2[0].GetValue() == last2[1].GetValue())
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void SetCards(List<Card> cards)
         {
             Cards = cards;
@@ -43,6 +58,11 @@ namespace SnapGame
            if (Cards.Contains(card)) throw new Exception("Card already in deck.");            
            
            Cards.Add(card);            
+        }
+
+        public void AddCards(List<Card> cards)
+        {
+            Cards.AddRange(cards);
         }
 
         public Card Draw()

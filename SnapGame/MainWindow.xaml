@@ -8,11 +8,11 @@
         Title="MainWindow" Height="718" Width="623">
     <Grid>
         <Button x:Name="SnapButton" Content="SNAP!" HorizontalAlignment="Center" Margin="0,444,0,0" VerticalAlignment="Top" Click="SnapButton_Click" Height="64" Width="124" FontSize="22"/>
-        <Image x:Name="CardImage" HorizontalAlignment="Left" Height="232" Margin="232,119,0,0" VerticalAlignment="Top" Width="163" Source="/images/playing_cards/10.png"/>
+        <Image x:Name="CardImage" HorizontalAlignment="Left" Height="232" Margin="232,119,0,0" VerticalAlignment="Top" Width="163" Source="/images/playing_cards/jackclub.png"/>
         <TextBlock x:Name="PlayerScoreText" HorizontalAlignment="Left" Margin="10,119,0,0" TextWrapping="Wrap" Text="Player score:" VerticalAlignment="Top" FontSize="36"/>
         <TextBlock x:Name="CpuScoreText" HorizontalAlignment="Left" Margin="415,119,0,0" TextWrapping="Wrap" Text="CPU score:" VerticalAlignment="Top" FontSize="36"/>
-        <TextBlock x:Name="PlayerScore" HorizontalAlignment="Left" Margin="96,183,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="48"/>
-        <TextBlock x:Name="CpuScore" HorizontalAlignment="Left" Margin="487,183,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="48"/>
+        <TextBlock x:Name="PlayerScoreValue" HorizontalAlignment="Left" Margin="96,183,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="48"/>
+        <TextBlock x:Name="CpuScoreValue" HorizontalAlignment="Left" Margin="487,183,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" FontSize="48"/>
         <Button x:Name="DealButton" Content="Deal" HorizontalAlignment="Center" Margin="0,538,0,0" VerticalAlignment="Top" FontSize="22" Height="64" Width="124" Click="DealButton_Click"/>
 
     </Grid>

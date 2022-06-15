@@ -41,10 +41,14 @@ namespace SnapGame
         public bool CheckSnap()
         {
             List<Card> last2 = Cards.TakeLast(2).ToList();
-            if (last2[0].GetSuit() == last2[1].GetSuit() || last2[0].GetValue() == last2[1].GetValue())
+            try
             {
-                return true;
+                if (last2[0].GetSuit() == last2[1].GetSuit() || last2[0].GetValue() == last2[1].GetValue())
+                {
+                    return true;
+                }
             }
+            catch(Exception) { }
             return false;
         }
 

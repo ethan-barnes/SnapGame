@@ -79,7 +79,7 @@ namespace SnapGame
                 if (j < 26)
                 {
                     playerDeck.AddCard(deck.GetCardAtPosition(j));
-                } 
+                }
                 else
                 {
                     cpuDeck.AddCard(deck.GetCardAtPosition(j));
@@ -112,15 +112,26 @@ namespace SnapGame
 
         private void DealButton_Click(object sender, RoutedEventArgs e)
         {
-            // Draws card from either player or CPU depending on turn counter.
-            Card card = turnCounter % 2 == 0 ? playerDeck.Draw() : cpuDeck.Draw();
+            // Draws card from either player or CPU depending on turn counter.          
+            try
+            {
+                Card card = turnCounter % 2 == 0 ? playerDeck.Draw() : cpuDeck.Draw(); pile.AddCard(card);
+                CardImage.Source = card.GetImage();
+                updateScores();
+                turnCounter++;
+            }
+            catch (Exception)
+            {
+                if (playerScore <= 1)
+                {
+                    MessageBox.Show("You lose.");
+                }
+                else if (cpuScore <= 1)
+                {
+                    MessageBox.Show("You win!");
+                }
+            }
 
-            pile.AddCard(card);
-            CardImage.Source = card.GetImage();
-            //CardImage.Source = new BitmapImage(new Uri($"/images/playing_cards/{card.GetId()}.png", UriKind.Relative));
-
-            updateScores();
-            turnCounter++;
         }
     }
 }

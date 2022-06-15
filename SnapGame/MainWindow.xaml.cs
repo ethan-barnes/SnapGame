@@ -57,11 +57,14 @@ namespace SnapGame
         {
             //MessageBox.Show("Snapped");
             // PlayerCardImg.Source = new BitmapImage(new Uri(@"/images/playing_cards/1.png", UriKind.Relative));
+            
+        }
+
+        private void DealButton_Click(object sender, RoutedEventArgs e)
+        {
             Random r = new Random();
             int card = r.Next(1, 52);
             CardImage.Source = new BitmapImage(new Uri($"/images/playing_cards/{card}.png", UriKind.Relative));
-
         }
-
     }
 }

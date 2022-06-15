@@ -24,5 +24,10 @@ namespace SnapGame
         {
             InitializeComponent();
         }
+
+        private void SnapButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Snapped");
+        }
     }
 }

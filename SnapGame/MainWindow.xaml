@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Select a message option and then choose the Display button." VerticalAlignment="Center"/>
+        <Button x:Name="SnapButton" Content="SNAP!" HorizontalAlignment="Left" Margin="357,261,0,0" VerticalAlignment="Top" Click="SnapButton_Click"/>
 
     </Grid>
 </Window>

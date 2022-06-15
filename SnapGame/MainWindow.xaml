@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SnapGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="718" Width="623">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Select a message option and then choose the Display button." VerticalAlignment="Center"/>
-        <Button x:Name="SnapButton" Content="SNAP!" HorizontalAlignment="Left" Margin="357,261,0,0" VerticalAlignment="Top" Click="SnapButton_Click"/>
+        <Button x:Name="SnapButton" Content="SNAP!" HorizontalAlignment="Center" Margin="0,444,0,0" VerticalAlignment="Top" Click="SnapButton_Click" Height="64" Width="124"/>
+        <Image x:Name="CardImage" HorizontalAlignment="Left" Height="232" Margin="232,119,0,0" VerticalAlignment="Top" Width="163" Source="/images/playing_cards/10.png"/>
 
     </Grid>
 </Window>

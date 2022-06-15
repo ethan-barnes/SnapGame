@@ -20,14 +20,48 @@ namespace SnapGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        Deck deck;
+        Deck playerDeck = new Deck(new List<Card>());
+        Deck cpuDeck = new Deck(new List<Card>());
+
         public MainWindow()
         {
             InitializeComponent();
+            SetUpCards();
+        }
+
+        private void SetUpCards()
+        {
+            List<Card> cardList = new List<Card>();
+            for (int i = 0; i < 52; i++)
+            {
+                cardList.Add(new Card(i + 1));
+            }
+            deck = new Deck(cardList);
+            deck.Shuffle();
+
+            for (int j = 0; j < 52; j++)
+            {
+                if (j < 26)
+                {
+                    playerDeck.AddCard(deck.GetCardAtPosition(j));
+                } 
+                else
+                {
+                    cpuDeck.AddCard(deck.GetCardAtPosition(j));
+                }
+            }
         }
 
         private void SnapButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Snapped");
+            //MessageBox.Show("Snapped");
+            // PlayerCardImg.Source = new BitmapImage(new Uri(@"/images/playing_cards/1.png", UriKind.Relative));
+            Random r = new Random();
+            int card = r.Next(1, 52);
+            CardImage.Source = new BitmapImage(new Uri($"/images/playing_cards/{card}.png", UriKind.Relative));
+
         }
+
     }
 }

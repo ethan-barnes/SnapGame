@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace SnapGame
 {
-    class Card
+    public class Card
     {
         private int id;
         private Value value;

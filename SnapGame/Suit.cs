@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnapGame
 {
-    enum Suit
+    public enum Suit
     {
         Club,
         Heart,

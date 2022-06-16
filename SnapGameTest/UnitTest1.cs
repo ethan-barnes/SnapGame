@@ -56,11 +56,47 @@ namespace SnapGameTest
         }
 
         [Test]
-        public void TestDeckCheckSnap()
+        public void TestDeckCheckSnapSuitGood()
         {
+            List<Card> cl = new List<Card>();
+            cl.Add(new Card(1, Value.Three, Suit.Club));
+            cl.Add(new Card(2, Value.Five, Suit.Club));
 
+            Deck deck = new Deck(cl);
+            Assert.IsTrue(deck.CheckSnap());
         }
 
+        [Test]
+        public void TestDeckCheckSnapSuitBad()
+        {
+            List<Card> cl = new List<Card>();
+            cl.Add(new Card(1, Value.Three, Suit.Club));
+            cl.Add(new Card(2, Value.Five, Suit.Heart));
 
+            Deck deck = new Deck(cl);
+            Assert.IsFalse(deck.CheckSnap());
+        }
+
+        [Test]
+        public void TestDeckCheckSnapValueGood()
+        {
+            List<Card> cl = new List<Card>();
+            cl.Add(new Card(1, Value.Five, Suit.Club));
+            cl.Add(new Card(2, Value.Five, Suit.Heart));
+
+            Deck deck = new Deck(cl);
+            Assert.IsTrue(deck.CheckSnap());
+        }
+
+        [Test]
+        public void TestDeckCheckSnapValueBad()
+        {
+            List<Card> cl = new List<Card>();
+            cl.Add(new Card(1, Value.King, Suit.Club));
+            cl.Add(new Card(2, Value.Five, Suit.Heart));
+
+            Deck deck = new Deck(cl);
+            Assert.IsFalse(deck.CheckSnap());
+        }
     }
 }

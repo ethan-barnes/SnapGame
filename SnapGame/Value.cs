@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnapGame
 {
-    enum Value
+    public enum Value
     {
         Ace,
         Two,

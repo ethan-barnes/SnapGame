@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnapGame
 {
-    class Deck
+    public class Deck
     {
         readonly Random r = new();
         private List<Card> Cards;

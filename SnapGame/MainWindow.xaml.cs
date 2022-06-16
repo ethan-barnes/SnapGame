@@ -25,9 +25,9 @@ namespace SnapGame
         private Random r = new Random();
         private int turnCounter = 0;
         Deck deck;
-        Deck playerDeck = new Deck(new List<Card>());
-        Deck cpuDeck = new Deck(new List<Card>());
-        Deck pile = new Deck(new List<Card>());
+        Deck playerDeck = new(new List<Card>());
+        Deck cpuDeck = new(new List<Card>());
+        Deck pile = new(new List<Card>());
 
         public MainWindow()
         {
